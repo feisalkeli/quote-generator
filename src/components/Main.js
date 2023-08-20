@@ -27,7 +27,10 @@ const Main = () => {
     <div className="app">
       <div className="card">
         <p className="heading">{data.content}</p>
-        <button onClick={fetchRandomQuote}>
+        <p className="heading" style={{ color: "red" }}>
+          {data.author}
+        </p>
+        <button onClick={fetchRandomQuote} className="button">
           <span>Generate Quote</span>
         </button>
       </div>
