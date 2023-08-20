@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import "./Main.css";
 
 const Main = () => {
   const [data, setData] = useState([]);
-
+  //Fetch Random Quote
   const fetchRandomQuote = () => {
     fetch("https://api.quotable.io/random", {
       method: "GET",
@@ -23,13 +24,17 @@ const Main = () => {
   }, []);
 
   return (
-    <div>
-      <p key={data}>{data.content}</p>
-      <p key={data} style={{ color: "red" }}>
-        {data.author}
-      </p>
-      <button onClick={fetchRandomQuote}>Generate Quote</button>
+    <div className="app">
+      <div className="card">
+        <p className="heading">{data.content}</p>
+        <button onClick={fetchRandomQuote}>
+          <span>Generate Quote</span>
+        </button>
+      </div>
     </div>
+    //
+    //   <p style={{ color: "red" }}>{data.author}</p>
+    //   <button onClick={fetchRandomQuote}>Generate Quote</button>
   );
 };
 
